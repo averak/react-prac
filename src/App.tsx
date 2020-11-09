@@ -1,14 +1,19 @@
 import React from "react";
 import "./App.css";
 
-function App() {
-  let title: string = "テストタイトル";
-  let message: string = "テストメッセージ";
+interface Props {
+  name: string;
+}
 
+function Welcome(props: Props) {
+  return <p>Hello, {props.name}</p>;
+}
+
+function App() {
   return (
     <div>
-      <h2>{title}</h2>
-      <p>{message}</p>
+      <Welcome name="Taro" />
+      <Welcome name="Hanako" />
     </div>
   );
 }
