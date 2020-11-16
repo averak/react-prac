@@ -1,21 +1,18 @@
 import React from "react";
 import "./App.css";
 
-interface Props {
+export type Row = {
   name: string;
-}
+  age: string;
+};
 
-function Welcome(props: Props) {
-  return <p>Hello, {props.name}</p>;
-}
-
-function App() {
+const App: React.FC<Row> = (props) => {
   return (
-    <div>
-      <Welcome name="Taro" />
-      <Welcome name="Hanako" />
-    </div>
+    <p>
+      こんにちは，{props.name}
+      {props.age}才さん
+    </p>
   );
-}
+};
 
-export default App;
+export default App
