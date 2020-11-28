@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { App, Footer, Header } from "./components";
+import { App, Layout } from "./components";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header title="MEMO"/>
-    <App message="This is App Component!" />
-    <Footer />
+    <Layout>
+      <App message="This is App Component!" />
+    </Layout>
   </React.StrictMode>,
   document.getElementById("root")
 );
