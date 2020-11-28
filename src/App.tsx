@@ -1,17 +1,18 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import "./App.css";
 
-class App extends Component {
-  public render() {
-    return (
-      <div>
-        <h1>React</h1>
-        <p>This is sample component.</p>
-        <p>これはサンプルのコンポーネントです。</p>
-      </div>
-    )
-  }
-}
+type Props = {
+  title: string;
+  message: string;
+};
+
+const App: React.FC<Props> = (props) => {
+  return (
+    <div>
+      <h1>{props.title}</h1>
+      <p>{props.message}</p>
+    </div>
+  );
+};
 
 export default App;
