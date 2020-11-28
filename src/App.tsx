@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import "./App.css";
 
 export type Row = {
@@ -6,13 +7,24 @@ export type Row = {
   age: string;
 };
 
-const App: React.FC<Row> = (props) => {
-  return (
-    <p>
-      こんにちは，{props.name}
-      {props.age}才さん
-    </p>
-  );
+let message: string = "お名前をどうぞ：";
+let in_val: string = "";
+
+let doChange = (event: any): void => {
+  in_val = event.target.value;
+  message = `こんにちは${in_val}さん！！`;
 };
 
-export default App
+let doAction = (): void => {
+  let el = (
+    <div>
+      <p>{message}</p>
+      <input type="text" id="input" onChange={doChange} />
+      <button onClick={doAction}>Click</button>
+    </div>
+  );
+
+  ReactDOM.render(el, document.getElementById("root"));
+};
+
+export default doAction;
