@@ -1,12 +1,12 @@
 import React from "react";
-import "./App.css";
+import "./Rect.css";
 
 type Props = {
   title: string;
   message: string;
 };
 
-const App: React.FC<Props> = (props) => {
+const Rect: React.FC<Props> = (props) => {
   return (
     <div>
       <h1>{props.title}</h1>
@@ -15,4 +15,4 @@ const App: React.FC<Props> = (props) => {
   );
 };
 
-export default App;
+export default Rect;
